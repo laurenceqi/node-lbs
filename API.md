@@ -96,8 +96,8 @@ same with **add a location api**, provide the same location id for update.
             "longitude": 100, 
             "latitude": 100,
             "distance": 100, 
-            "offset": 0,
-            "limit": 20 
+            "from": 0,
+            "size": 20 
             "params": {
                 "param1": "value" or queryObject,
                 ...

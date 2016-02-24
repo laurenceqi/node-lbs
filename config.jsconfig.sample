@@ -1,0 +1,36 @@
+var config = {
+    //=========== rabbitmq config begin =============
+    enable_mq: false, //是否启用消息队列， true or false
+    mq_url: 'amqp://localhost',
+    mq_prefetch: 1000, //并发处理消息数量设置 default 1000
+    mq_ack_enabled: true, //是否消息确认 true or false
+    //=========== rabbitmq config end =============
+    //=========== es config begin =============
+    backend: 'elastic',
+    elastic_bulk_batch: 1 * 2, //es批量插入设置， 批量数目 * 2，生产建议 1000 * 2
+    bulk_timeout: 60 * 1000, // in millisecond
+    refresh_interval: '1s', //刷新时间， 生产建议30s以上
+    es_url: 'localhost:9200',
+    es_client_max_socket: 10, //es客户端Socket并发， 建议10
+    es_client_log_level: 'info', //es客户端日志级别
+    es_request_timeout: 60000, //请求超时时间 in millisecond
+    //=========== es config end =============
+    //=========== redis config begin =============
+    enable_cache: true, //是否启用redis cache，可大幅提高密集数据下的查询能力。性能足够的情况下不建议启用
+    enable_redis_cluster: false, //redis cluster是否开启配置
+    redis_url: 'redis://localhost:6379',  //非redis cluster模式下读取该项配置
+    redis_cluster: [{
+        port: 6379,
+        host: '127.0.0.1'
+    }], // redis cluster模式下读取该项配置
+    cache_ttl: 300, //in sencond
+    //=========== redis config end =============
+    //=========== user business config begin =============
+    user_data_valid_time: 3600 * 5, //time unit s
+    max_distance: 1000000, //查询最大距离 in m
+    max_userno: 1000, //查询最大用户数
+    //=========== user business config end   =============
+};
+
+
+module.exports = config;

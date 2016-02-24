@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "amqplib": "^0.4.0",
+    "body-parser": "*",
+    "commander": "^2.9.0",
+    "elasticsearch": "^10.0.1",
+    "express": "*",
+    "ioredis": "^1.14.0",
+    "lodash": "^3.10.1",
+    "mocha": "^2.3.4",
+    "mongodb": "*",
+    "ngeohash": "^0.6.0",
+    "request": "^2.65.0",
+    "should": "^7.1.1",
+    "winston": "^2.1.1"
+  },
+  "scripts": {
+    "test": "mocha",
+  }
+}
